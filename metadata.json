@@ -1,0 +1,8 @@
+{
+  "name": "GLAR Derby",
+  "description": "Elite gamified real estate mentorship and race tracking platform honoring champions, tracking stable performance, and guiding jockeys to the Winner's Circle.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
