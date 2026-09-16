@@ -281,7 +281,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-surface text-on-surface flex flex-col font-body-md antialiased selection:bg-tertiary-fixed selection:text-primary">
+    <div className="min-h-screen bg-surface text-on-surface flex flex-col font-body-md antialiased selection:bg-tertiary-fixed selection:text-primary w-full max-w-full overflow-x-hidden">
       {/* Sidebar Navigation */}
       <NavigationSidebar
         activeTab={activeTab}
@@ -293,7 +293,7 @@ export function App() {
       />
 
       {/* Main Content Area */}
-      <div className="lg:pl-72 flex flex-col min-h-screen">
+      <div className="lg:pl-72 flex flex-col min-h-screen w-full max-w-full overflow-x-hidden">
         {/* Top Race Header */}
         <RaceHeader
           onOpenNewStake={() => setIsNewStakeOpen(true)}
@@ -302,7 +302,7 @@ export function App() {
         />
 
         {/* Dynamic Main Body View */}
-        <main className="flex-1 pt-20">
+        <main className="flex-1 pt-16 sm:pt-20 w-full max-w-full overflow-x-hidden">
           {activeTab === 'track-tracker' && (
             <TrackTrackerView
               currentUser={currentUser}

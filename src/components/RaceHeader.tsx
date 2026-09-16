@@ -63,42 +63,42 @@ export const RaceHeader: React.FC<RaceHeaderProps> = ({
   };
 
   return (
-    <header className="fixed top-0 left-0 lg:left-72 right-0 h-20 bg-surface/90 backdrop-blur-md z-40 px-4 sm:px-8 lg:px-margin-desktop flex items-center justify-between border-b border-surface-container-high/60 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <header className="fixed top-0 left-0 lg:left-72 right-0 h-16 sm:h-20 bg-surface/95 backdrop-blur-md z-40 px-3 sm:px-6 lg:px-8 flex items-center justify-between border-b border-surface-container-high/60 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
       {/* Left side */}
-      <div className="flex items-center gap-3 sm:gap-4 text-on-surface-variant">
+      <div className="flex items-center gap-2 sm:gap-3 text-on-surface-variant min-w-0 flex-1 mr-2">
         <button
           onClick={onOpenMobileNav}
-          className="lg:hidden p-2 rounded-lg text-primary hover:bg-surface-container"
+          className="lg:hidden p-1.5 -ml-1 rounded-lg text-primary hover:bg-surface-container shrink-0 cursor-pointer"
           aria-label="Open menu"
         >
           <span className="material-symbols-outlined text-2xl">menu</span>
         </button>
 
-        <span className="material-symbols-outlined text-2xl text-primary">stadium</span>
+        <span className="material-symbols-outlined text-xl sm:text-2xl text-primary shrink-0 hidden sm:inline-block">stadium</span>
         <div className="h-4 w-[1px] bg-outline-variant hidden sm:block"></div>
-        <span className="font-headline-md text-lg sm:text-headline-md text-primary uppercase tracking-tight font-bold">
+        <span className="font-headline-md text-sm sm:text-base lg:text-headline-md text-primary uppercase tracking-tight font-bold truncate">
           Race Operations
         </span>
       </div>
 
       {/* Right side */}
-      <div className="flex items-center gap-3 sm:gap-6">
+      <div className="flex items-center gap-1.5 sm:gap-4 shrink-0">
         {/* Notifications */}
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={handleOpenAlerts}
-            className="relative p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container cursor-pointer"
+            className="relative p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container cursor-pointer shrink-0"
             aria-label="Notifications"
           >
-            <span className="material-symbols-outlined text-2xl">notifications</span>
+            <span className="material-symbols-outlined text-xl sm:text-2xl">notifications</span>
             {activeUnread > 0 && (
-              <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-derby-red rounded-full ring-2 ring-white animate-pulse"></span>
+              <span className="absolute top-1.5 right-1.5 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-derby-red rounded-full ring-2 ring-white animate-pulse"></span>
             )}
           </button>
 
           {/* Notifications Dropdown */}
           {notificationsOpen && (
-            <div className="absolute right-0 mt-3 w-80 sm:w-96 bg-surface-container-lowest rounded-2xl shadow-2xl border border-surface-container-high py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+            <div className="absolute right-0 mt-3 w-[calc(100vw-1.5rem)] sm:w-96 max-w-sm bg-surface-container-lowest rounded-2xl shadow-2xl border border-surface-container-high py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
               <div className="flex items-center justify-between px-5 py-2 border-b border-surface-container">
                 <span className="font-headline-md text-sm text-primary">Racetrack Bulletins</span>
                 <span className="font-label-caps text-[10px] text-outline uppercase">3 items</span>
@@ -135,15 +135,15 @@ export const RaceHeader: React.FC<RaceHeaderProps> = ({
           )}
         </div>
 
-        <div className="h-8 w-[1px] bg-outline-variant hidden sm:block"></div>
+        <div className="h-6 sm:h-8 w-[1px] bg-outline-variant hidden sm:block"></div>
 
         {/* New Stake Action Button */}
         <button
           onClick={onOpenNewStake}
-          className="flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-primary text-on-primary rounded-xl font-label-caps text-label-caps hover:bg-primary-container transition-all shadow-md active:scale-95 cursor-pointer hover:shadow-lg"
+          className="flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 sm:py-2.5 bg-primary text-on-primary rounded-xl font-label-caps text-[11px] sm:text-xs hover:bg-primary-container transition-all shadow-md active:scale-95 cursor-pointer hover:shadow-lg shrink-0 whitespace-nowrap font-bold"
         >
+          <span className="material-symbols-outlined text-sm sm:text-base font-bold">add</span>
           <span>NEW STAKE</span>
-          <span className="material-symbols-outlined text-sm font-bold">add</span>
         </button>
       </div>
     </header>
